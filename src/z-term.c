@@ -382,6 +382,9 @@ static errr term_win_nuke(term_win *s, int w, int h)
 	/* Free the terrain content arrays */
 	C_KILL(s->vta, h * w, byte);
 	C_KILL(s->vtc, h * w, char);
+	
+	(void)w;
+	(void)h;
 
 	/* Success */
 	return (0);
