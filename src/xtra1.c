@@ -3747,7 +3747,7 @@ static void calc_spells(void)
 	{
 		/* Get the spellbook type */
 		int tval = mp_ptr->spell_book;
-		int sval, i;
+		int sval, index;
 
 		object_kind *k_ptr;
 
@@ -3768,14 +3768,14 @@ static void calc_spells(void)
 			if (k_ptr->special & (SPECIAL_EVER_SEEN))
 			{
 				/* Scan all the spells */
-				for (i = mp_ptr->book_start_index[sval-1]; i < mp_ptr->book_start_index[sval]; i++)
+				for (index = mp_ptr->book_start_index[sval-1]; index < mp_ptr->book_start_index[sval]; index++)
 				{
 					/* Get the spell */
-					s_ptr = &mp_ptr->info[i];
+					s_ptr = &mp_ptr->info[index];
 
 					/* This spell is legal and as yet unused */
 					if ((s_ptr->slevel <= p_ptr->spell_level) &&
-					    (!(p_ptr->spell_flags[i] & (PY_SPELL_WORKED))))
+					    (!(p_ptr->spell_flags[index] & (PY_SPELL_WORKED))))
 					{
 						/* Count it */
 						p_ptr->uncast_spells++;
@@ -5903,14 +5903,14 @@ static void calc_bonuses(void)
 		else
 		{
 			/* Wisdom, intelligence and charisma slowly recover */
-			int tmp = MIN(4, 5 * p_ptr->berserk / BERSERK_WEAKNESS_LENGTH);
+			int temp = MIN(4, 5 * p_ptr->berserk / BERSERK_WEAKNESS_LENGTH);
 
-			p_ptr->stat_add[A_WIS] -= tmp;
-			p_ptr->stat_add[A_INT] -= tmp;
-			p_ptr->stat_add[A_CHR] -= tmp;
+			p_ptr->stat_add[A_WIS] -= temp;
+			p_ptr->stat_add[A_INT] -= temp;
+			p_ptr->stat_add[A_CHR] -= temp;
 
 			/* Extreme weakness, slowly recovering */
-			p_ptr->stat_add[A_STR] -= tmp;
+			p_ptr->stat_add[A_STR] -= temp;
 		}
 	}
 
@@ -5927,10 +5927,10 @@ static void calc_bonuses(void)
 		/* In the "crash" portion of the necromantic rage */
 		else
 		{
-			int tmp = MIN(4, 4 * p_ptr->necro_rage / NECRO_WEAKNESS_LENGTH);
+			int temp = MIN(4, 4 * p_ptr->necro_rage / NECRO_WEAKNESS_LENGTH);
 
 			/* Extreme weakness, slowly recovering */
-			p_ptr->stat_add[A_STR] -= tmp;
+			p_ptr->stat_add[A_STR] -= temp;
 		}
 	}
 
@@ -6293,7 +6293,7 @@ static void calc_bonuses(void)
 		/* In the "rage" portion of the berserker fit */
 		if (p_ptr->berserk > BERSERK_WEAKNESS_LENGTH)
 		{
-			int tmp;
+			int temp;
 
 			/* Berserkers are great in melee, but not in ranged combat */
 			p_ptr->skill_thn += 36;
@@ -6302,9 +6302,9 @@ static void calc_bonuses(void)
 			p_ptr->skill_tht -= 36;
 
 			/* Bonus to Deadliness */
-			tmp = (3 + p_ptr->to_d / 6);
-			p_ptr->to_d     += tmp;
-			p_ptr->dis_to_d += tmp;
+			temp = (3 + p_ptr->to_d / 6);
+			p_ptr->to_d     += temp;
+			p_ptr->dis_to_d += temp;
 
 			/* Berserkers care nothing for their safety */
 			p_ptr->to_a -= 15;
