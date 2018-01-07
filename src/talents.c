@@ -1148,20 +1148,20 @@ static cptr do_talent(int talent, int mode, int talent_choice)
 			bool occupied[8];
 			int num_mons = 0;
 			int total_blows;
-			int i, s;
+			int index, s;
 
 			/* Count the number of monsters to be hit */
-			for (i = 0; i < 8; i++)
+			for (index = 0; index < 8; index++)
 			{
-				x = p_ptr->px + ddx[ddc[i]];
-				y = p_ptr->py + ddy[ddc[i]];
+				x = p_ptr->px + ddx[ddc[index]];
+				y = p_ptr->py + ddy[ddc[index]];
 
 				if (cave_m_idx[y][x])
 				{
-					occupied[i] = TRUE;
+					occupied[index] = TRUE;
 					num_mons++;
 				}
-				else occupied[i] = FALSE;
+				else occupied[index] = FALSE;
 			}
 
 			/* Calculate total number of blows */
@@ -1189,7 +1189,7 @@ static cptr do_talent(int talent, int mode, int talent_choice)
 				p_ptr->num_blow2 = 1;
 
 				/* Attack monsters in a circle */
-				for (i = 0, s = randint(8); i < total_blows; i++, s++)
+				for (index = 0, s = randint(8); index < total_blows; index++, s++)
 				{
 					/* Find next occupied spot */
 					while (!occupied[s % 8]) s++;
@@ -1265,13 +1265,13 @@ static cptr do_talent(int talent, int mode, int talent_choice)
 			if (use)
 			{
 				char ch;
-				int dir = 0;
+				int directory = 0;
 				int x, y;
 
-				while (!dir)
+				while (!directory)
 				{
 					if (!get_com("Direction:", &ch)) return ("");
-					dir = target_dir(ch);
+					directory = target_dir(ch);
 				}
 
 				x = p_ptr->px;
@@ -1281,22 +1281,22 @@ static cptr do_talent(int talent, int mode, int talent_choice)
 
 				/* Send an force blast */
 				/* Note -- consider using thrustaway and/or test_hit_combat */
-				project(-1, 0, y, x, y + ddy[dir], x + ddx[dir], pow, GF_FORCE, PROJECT_KILL | PROJECT_GRID, 0, 0);
+				project(-1, 0, y, x, y + ddy[directory], x + ddx[directory], pow, GF_FORCE, PROJECT_KILL | PROJECT_GRID, 0, 0);
 			}
 
 			break;
 		}
 		case TALENT_EARTHQUAKES:
 		{
-			int skill = get_skill(S_HAFTED, 0, 100);
+			int current_skill = get_skill(S_HAFTED, 0, 100);
 			int size = 2;
 
 			/* Require the use of a blunt weapon */
 			object_type *o_ptr = &inventory[INVEN_WIELD];
 
 			/* Radius is based on skill and weapon weight */
-			if (skill > 70) size++;
-			if (skill > 90) size++;
+			if (current_skill > 70) size++;
+			if (current_skill > 90) size++;
 
 			if (o_ptr)
 				if (o_ptr->weight > 170)
@@ -1383,7 +1383,7 @@ static cptr do_talent(int talent, int mode, int talent_choice)
 
 		case TALENT_BEARFORM:
 		{
-			int skill, dur;
+			int current_skill, dur;
 
 			bool perm;
 			if (desc) return "Assume the form of a bear";
@@ -1402,8 +1402,8 @@ static cptr do_talent(int talent, int mode, int talent_choice)
 			}
 			else
 			{
-				skill = get_skill(S_SHAPECHANGE, 0, 100);
-				dur = (skill + get_skill(S_NATURE, 0, 100)) * (t_ptr->timeout - 10) / (100) + 10;
+				current_skill = get_skill(S_SHAPECHANGE, 0, 100);
+				dur = (current_skill + get_skill(S_NATURE, 0, 100)) * (t_ptr->timeout - 10) / (100) + 10;
 				if (dur > t_ptr->timeout) perm = TRUE;
 
 				if (check)
@@ -1472,7 +1472,7 @@ static cptr do_talent(int talent, int mode, int talent_choice)
 		case TALENT_VORTEXFORM:
 		case TALENT_EAGLEFORM:
 		{
-			int skill = get_skill(S_SHAPECHANGE, 0, 100);
+			int current_skill = get_skill(S_SHAPECHANGE, 0, 100);
 			int second_skill, second_skill_type, dur;
 			bool perm = FALSE;
 
@@ -1497,13 +1497,13 @@ static cptr do_talent(int talent, int mode, int talent_choice)
 			 * shapechange should become permanent when the average of skill and second_skill
 			 * reaches halfway to 100 from minimum skill
 			 */
-			dur = (skill + second_skill - t_ptr->min_level * 2) * (t_ptr->timeout - 10) / (100 - t_ptr->min_level) + 10;
+			dur = (current_skill + second_skill - t_ptr->min_level * 2) * (t_ptr->timeout - 10) / (100 - t_ptr->min_level) + 10;
 			if (dur >= t_ptr->timeout) perm = TRUE;
 
 			/* Describe stat bonuses for different forms */
 			if (desc)
 			{
-				int i, stat;
+				int index, stat;
 				//u32b flag = 1;
 				byte old_shape = p_ptr->schange;
 				byte old_skill = p_ptr->schange_skill;
@@ -1515,11 +1515,11 @@ static cptr do_talent(int talent, int mode, int talent_choice)
 				p_ptr->schange_skill = second_skill_type;
 
 				/* Display bonuses and maluses to stats */
-				for (i = 0; i < 32; i++)
+				for (index = 0; index < 32; index++)
 				{
-					stat = player_flags_pval(1L << i, TRUE) - player_flags_pval(1L << i, FALSE);
-					if (stat > 0) c_roff(TERM_L_BLUE, format("+%d %s ", stat, pval_desc_text[i]), 10, 78);
-					if (stat < 0) c_roff(TERM_L_BLUE, format("%d %s ",  stat, pval_desc_text[i]), 10, 78);
+					stat = player_flags_pval(1L << index, TRUE) - player_flags_pval(1L << index, FALSE);
+					if (stat > 0) c_roff(TERM_L_BLUE, format("+%d %s ", stat, pval_desc_text[index]), 10, 78);
+					if (stat < 0) c_roff(TERM_L_BLUE, format("%d %s ",  stat, pval_desc_text[index]), 10, 78);
 				}
 
 				/* Todo -- add resistances and other properties */
