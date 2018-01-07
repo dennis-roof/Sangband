@@ -326,7 +326,7 @@ static void print_history_header()
 static void print_history(int first_item, int page_size, FILE *fff)
 {
     int row, i;
-   	char buf[90];
+    char buf[90];
 
     row = 0;
     for (i = first_item; row <= page_size && i < history_ctr; i++)
@@ -347,7 +347,7 @@ static void print_history(int first_item, int page_size, FILE *fff)
         /* Size of header = 5 lines */
         if (fff)
         {
-            fprintf(fff, buf);
+            fprintf(fff, "%s", buf);
             fprintf(fff,"\n");
         }
         else prt(buf, row + 5, 0);
