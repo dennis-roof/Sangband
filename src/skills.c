@@ -1081,6 +1081,7 @@ static bool can_raise_skill_confirm(int warning)
 		case THIEVING:
 		{
 			warn_text = "If you raise this skill any higher, shopkeepers will start to notice; your Charisma will drop by 2.";
+			break;
 		}
 
 
@@ -2096,6 +2097,7 @@ static bool can_reduce_skill(int skill, bool verbose, bool refund)
 				if (verbose) prt_oath_message();
 				return (FALSE);
 			}
+			__attribute__((fallthrough));
 		case S_FORGE_ARMOR:
 		case S_FORGE_WEAPON:
 		case S_INFUSION:
