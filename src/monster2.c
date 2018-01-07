@@ -3654,6 +3654,7 @@ void update_smart_learn(int m_idx, int what)
 			else m_ptr->smart &= ~(SM_GOOD_SAVE);
 			if (p_ptr->skill_sav >= 100) m_ptr->smart |= (SM_PERF_SAVE);
 			else m_ptr->smart &= ~(SM_PERF_SAVE);
+			break;
 		}
 
 		/* Archery attacks don't learn anything */
@@ -3741,6 +3742,7 @@ void update_smart_learn(int m_idx, int what)
 			if (p_ptr->immune_acid) m_ptr->smart |= (SM_IMM_ACID);
 			else m_ptr->smart &= ~(SM_IMM_ACID);
 			if (p_ptr->resist_confu) m_ptr->smart |= (SM_RES_CONFU);
+			break;
 		}
 
 		/* Water attacks learn about sound/confusion resists */
@@ -3750,6 +3752,7 @@ void update_smart_learn(int m_idx, int what)
 			else m_ptr->smart &= ~(SM_RES_SOUND);
 			if (p_ptr->resist_confu) m_ptr->smart |= (SM_RES_CONFU);
 			else m_ptr->smart &= ~(SM_RES_CONFU);
+			break;
 		}
 
 		/*
