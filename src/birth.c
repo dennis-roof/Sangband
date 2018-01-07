@@ -1448,7 +1448,7 @@ static bool player_birth_aux_2(bool quick_start)
 	u32b rarity;
 
 	bool flag;
-	bool prev = FALSE;
+	//bool prev = FALSE;
 
 	char ch;
 	char buf[DESC_LEN];
@@ -1906,7 +1906,7 @@ static bool player_birth_aux_2(bool quick_start)
 		if ((ch == '\r') || (ch == '\n')) break;
 
 		/* Note that a previous roll exists */
-		prev = TRUE;
+		//prev = TRUE;
 	}
 
 	/* Set character rolls  XXX */
