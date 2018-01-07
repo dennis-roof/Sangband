@@ -1,0 +1,242 @@
+
+====== The Dungeon ======
+
+     All levels other than 0 (or zero feet) lie within the dungeon.  Each level
+of the dungeon is fifty feet high, and is divided into large rectangular regions
+(several times larger than the screen) by impenetrable walls.  Once you leave a
+level, you will never again find your way back to that region of that level, but
+there are an infinite number of other regions at that same depth that you can
+explore later.  Monsters move about just as you do, and you may see them again.
+
+
+--- Terrain ---
+
+     The following terrain types affect movement, combat, or both.  Because they
+less frequently take advantage of terrain, monsters benefit more from favorable
+and suffer less from unfavorable terrain than your character does.
+
+Rubble:
+     Greatly slows down any creature that cannot bore or pass through rock.
+Ends LOS, stops missiles, bolts, and beams, and reduces the radius of ball
+spells.  Grants the character and monsters within it some protection from melee,
+ranged, or magical attacks.  Rubble may dissolve to normal floor.
+
+Water:
+     Cannot be passed by fiery, earthbound monsters, slows down other most other
+monsters.  Slows you down, and cannot be crossed if you are carrying too much.
+You and your enemies are easier to hit when in water, and most spells
+(especially water-based ones) gain in strength.  It is hard to dodge in water.
+However, fire-based spells become much less powerful, so find a lake if you
+battle Smaug.  Water may evaporate.
+
+Lava:
+     Can be passed by any character, but inflicts substantial fire damage (less
+for players with feather fall - they're light on their feet).  All monsters
+other than fiery or strong flying creatures will not cross.  Water and cold-
+based spells suffer and fire-based spells become more powerful against a target
+in lava.  Lava may freeze to rubble or normal floor.
+
+Trees:
+     Slows down characters not familiar with druidic techniques, and all non-
+natural monsters that neither fly nor pass through rock.  Ends LOS, stops
+missiles, bolts, and beams, and reduces the radius of ball spells.  Grants the
+character and monsters within it some protection from melee, ranged, or magical
+attacks.  Trees can burn.
+
+Permanent walls:
+     You can dig through most walls but some are impenetrable.  The dungeon is
+surrounded by these kinds of walls and some special rooms are made of them.
+
+Staircases:
+     Staircases allow your character to ascend or descend from one level to
+another, and are represented by "<" (up) and ">" (down).  Each level has at
+least one up staircase, and two down staircases, unless it is the home of Sauron
+(level 99/4950') or Morgoth (level 100/5000'), whom you must kill before
+staircases will appear.  Otherwise, the staircases are guaranteed, but they may
+be difficult to find.  Once you leave a level, you can never return to it.  If
+you found an artifact, identified it, and left it on the level, it is
+permanently lost.  Watch out for spells and traps that can suddenly force you
+off the level.
+
+Secret doors:
+     Many secret doors exist in the dungeon, and may lead to anything from a new
+section of the dungeon level to an empty closet.  As your familiarity with the
+dungeon grows, you will know where many secret doors are likely to be.  Secret
+doors always look like granite until found.  You find hidden doors using the
+'s'earch command, or magic.
+
+Locked and stuck doors:
+     Doors may be locked or stuck; getting through them may not be easy.  Your
+disarming skill makes all the difference to your ability to handle locks, but
+you can also bash doors down, take a pickaxe to them, or blast them open with
+magic.
+     Monsters are also slowed down by doors; you can earn yourself valuable time
+by jamming or locking them.
+
+Open doors:
+     Open doors (if unbroken) may be closed.  If a monster is in the way, you
+instead attempt to slam the door:  The monster gets a free turn, then you
+attempt to close the door.  If you succeed, the monster retreats out of the way
+and loses a turn.
+
+Traps:
+     Traps also await you in the dungeon.  They look like normal terrain until
+found, too often by your being caught by one.  They start out weak and easy to
+disarm, but can get truly nasty further down...
+     You find hidden traps by using the 's'earch command.  Many characters can
+also use magic and everyone can use the appropriate magical device.  Be warned:
+although magical disarming is convenient, it is never a sure thing.
+
+Rooms:
+     The Pits of Angband contain many kinds of rooms, including some that house
+hordes of monsters, contain extraordinary items, or are filled with deadly
+traps.  Some special rooms, known as vaults, are extremely dangerous and
+lucrative.
+
+Mining:
+     There is much treasure in the walls of the dungeon, just waiting for an
+industrious adventurer to come and dig it out.  Once you can afford it, and if
+you can handle the weight, bring a shovel or pick along.  Your ability to tunnel
+depends on strength, weapon weight, and any special digging bonus the weapon
+provides.  Your success depends on these factors and the strength of the wall:
+granite is very hard, quartz is hard, magma is soft, and rubble is very soft.
+     As you get richer, the treasures in the wall won't seem so appealing
+anymore, but keep an item or spell of tunneling handy.  Not only do all sorts of
+special vaults lie deep below the surface, some completely enclosed by solid
+rock, but smart adventurers deliberately alter the dungeon to make the most
+dangerous breathers and summoners manageable.
+
+
+--- Exploring ---
+
+Light:
+     Your character must have some source of light in order to see, unless the
+area around him is magically lit.  Depending on the items he has equipped, he
+may have a light radius of one (torches with low fuel), two (a lantern or well-
+fueled torch), or more, up to a rarely-attained maximum of five.  Never risk
+being without light ... unless you know what you are doing.
+     A torch or lantern (usually) burns fuel, and may be refilled (use the
+'F'uel command) with other torches or flasks of oil respectively.  It is
+rumoured that other light sources exist which never need replenishing.  Light
+sources can be lit or doused (use the '(' command).   When lit, they will
+illuminate the surrounding area, even when placed on the floor.  They will
+automatically light up when equipped, and will neither shed light nor use fuel
+in your backpack.
+     In addition you may get access to spells which permanently light up areas
+of the dungeon; these can be truly handy, because a monster you can see coming
+is much less dangerous.
+
+Darkness:
+     But darkness can be useful too.  Unseen monsters are harder to hit with
+physical attacks, and take less damage from spells (because you can't aim at
+them precisely).  You, likewise, are harder to hit if in and surrounded by
+darkness, and will take less damage from ranged attacks.  Depending on your
+skills, staying in darkness may yield other advantages as well.
+
+Food and Regeneration:
+     Never risk being without food.  You must eat every so often in order to
+avoid starvation.  The speed at which you consume food depends on your race
+(trolls and giants need to eat a lot) and the items you wear.
+     The speed at which you regenerate is doubled when you are resting (so rest
+in place instead of staying in place whenever possible), and is also affected by
+various object attributes and temporary conditions.
+
+Noise:
+     Characters make a certain amount of noise all the time; this innate noise
+decreases as stealth improves.  Moving more quickly increases noise somewhat
+because you perform more actions in a given period of time.  Resting, sneaking,
+and (if you have any stealth skill) moving in the dark all reduce base noise
+substantially.
+     To base noise is added extra noise.  Every time you engage in combat, cast
+most kinds of spells that hurt monsters, bash a door or a chest, kill a monster,
+or wreck the dungeon, you make extra noise.  Extra noise dies down over time.
+     Sleeping monsters will be disturbed by noise, especially if you are nearby
+and/or are in line of sight.  You may deliberately make noise by using the Bash
+command.
+
+Searching and Detection:
+     The dungeon is full of secret doors and hidden traps.  Perception skill is
+crucial for automatically finding traps and secret doors as you move around,
+especially deep in the dungeon where they become very hard to find.  You can
+also actively hunt for hidden things by typing 's' to search for a turn.   This
+is much more effective and requires less perception skill.  However, the most
+powerful way to reveal traps and secret doors is magic:  spells exist that make
+finding doors and avoiding traps a easy task.
+     The one thing that no magic spell can find for you is essences.  Once your
+Magical infusion skill is at least 15, you start to notice essences, both
+automatically and by deliberately searching.  As you descend into the dungeon,
+be sure to keep raising your Magical infusion skill (raising Perception helps
+also, but not as much), because high-level essences are much harder to find.
+
+Level Feelings:
+     Spend enough time on a given level and you will get a message describing
+it.  The more interesting the choice of adjectives, the more dangerous and
+lucrative the level is likely to be.  At the same time, the depth indicator
+located at the bottom-right corner of the main screen will change color.  Whites
+and yellows indicate relatively quiet levels, but oranges and reds mean danger
+and rewards.
+     Things that boost level feelings include:  out of depth monsters (small
+effect), out of depth uniques (larger effect), out of depth objects, artifacts
+and other powerful kinds of objects, and very unusual rooms.
+     You will occasionally get the message "You feel there is something special
+about this level.", indicating that this is either a quest level, or that there
+is an active player ghost lurking there.  Artifacts and special rooms do not
+make a level special.
+
+Precognition Messages:
+     If your Perception skill is great enough, you will start to get
+"precognition" messages indicating the presence of many of the individual
+monsters, objects, and special rooms that boost level feelings.  Unlike level
+feelings, they appear immediately.  The higher you raise your Perception, the
+more specific - and accurate - these messages become.
+
+
+--- The Passage of Time ---
+
+     Both monsters and characters gain energy each turn and use it to perform
+actions.  Any creature that moves at normal speed gains 10 energy per game turn;
+any monster move and most character actions take 100 energy.  Some monsters move
+at double speed and you can too, if you quaff a Potion of Speed.  Actions still
+take the same amount of energy, but they and you gain twice the energy each
+turn.  Further down, monsters lurk that move even faster, and rare items exist
+that allow you to keep pace.  If you can, avoid being slower than your foes.
+
+An abbreviated speed-to-energy table:
+
+(very slow creatures can get as little as 1 energy per turn)
+  -20 speed:  3 energy
+  -15      :  4
+  -10      :  5
+   -5      :  6
+  normal   : 10
+   +5      : 15
+  +10      : 20
+  +15      : 25
+  +20      : 30
+  +25      : 35
+  +30      : 38 (energy only goes up very slowly above +30 speed)
+
+Regeneration and recovery:
+     Every 10 game turns, you regenerate some hitpoints and mana (unless you are
+ill or wounded), and get hurt by cuts and poison.  Temporary conditions count
+down, rods recharge, and light sources use fuel.  Every 100 game turns, you
+digest some food.  Every hundred thousand game turns equals one day; the town
+spends half that time in darkness and the other half in light.
+     Every 10 game turns, every monster on the level gets a chance to recover
+from all temporary conditions.  Every 100 game turns, monsters regenerate
+hitpoints.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
