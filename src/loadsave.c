@@ -3693,17 +3693,17 @@ static bool savefile_menu(void)
 		}
 		else
 		{
-			int x;
+			int keypress;
 
 			/* Process command */
-			if (islower(k)) x = A2I(k);
-			else x = A2I(my_tolower(k)) + 26;
+			if (islower(k)) keypress = A2I(k);
+			else keypress = A2I(my_tolower(k)) + 26;
 
 			/* Stay legal */
-			if ((x < 2) || (x >= max)) continue;
+			if ((keypress < 2) || (keypress >= max)) continue;
 
 			/* Get player name */
-			(void)strnfmt(op_ptr->full_name, sizeof(op_ptr->full_name), "%s", savefile_names[x - 2]);
+			(void)strnfmt(op_ptr->full_name, sizeof(op_ptr->full_name), "%s", savefile_names[keypress - 2]);
 
 			/* Process the player name, change savefile name */
 			process_player_name(TRUE);
