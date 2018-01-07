@@ -4634,7 +4634,7 @@ bool make_object(object_type *o_ptr, bool good, bool great, bool exact_kind)
 	/* Generate multiple items */
 	if ((k_ptr->gen_mult_prob) && ((k_ptr->gen_mult_prob >= 100) ||
 	    (k_ptr->gen_mult_prob >= randint(100))) &&
-	    (k_ptr->gen_dice * k_ptr->gen_side))
+	    (k_ptr->gen_dice * k_ptr->gen_side > 0))
 	{
 		o_ptr->number = damroll(k_ptr->gen_dice, k_ptr->gen_side);
 
