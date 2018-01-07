@@ -3429,85 +3429,85 @@ const skill_type skill_info[NUM_SKILLS] =
 talent_type talent_info[NUM_TALENTS] =
 {
 	/* Combat talents */
-	{"Turn skin to stone",          'a', 1, {S_WRESTLING},                   65, 140, OATH_OF_IRON, TALENT_WARRIOR},
-	{"Berserk fury",                'b', 1, {S_WRESTLING},                   80, 140, OATH_OF_IRON, TALENT_WARRIOR},
-	{"Resist damage",               'c', 1, {S_KARATE},                      90, 140, OATH_OF_IRON, TALENT_WARRIOR},
-	{"Learn about monster",         'd', 1, {NUM_SKILLS},                     0,   0, OATH_OF_IRON, TALENT_WARRIOR},
-	{"Whirlwind Attack",            'e', 3, {S_SWORD, S_POLEARM, S_HAFTED},  30,   0,            0, TALENT_WARRIOR},
-	{"Circle Kick",                 'f', 1, {S_KARATE},                      30,  20,            0, TALENT_WARRIOR},
-	{"Impact Blow",                 'g', 1, {S_HAFTED},                      30,  10,            0, TALENT_WARRIOR},
-	{"Earthquakes",                 'h', 1, {S_HAFTED},                      60, 140, OATH_OF_IRON, TALENT_WARRIOR},
-	{"Lunge",                       'l', 1, {NUM_SKILLS},                     0,   3, OATH_OF_IRON, TALENT_WARRIOR},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
+	{"Turn skin to stone",          'a', 1, {S_WRESTLING},                   65, 140, OATH_OF_IRON, TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Berserk fury",                'b', 1, {S_WRESTLING},                   80, 140, OATH_OF_IRON, TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Resist damage",               'c', 1, {S_KARATE},                      90, 140, OATH_OF_IRON, TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Learn about monster",         'd', 1, {NUM_SKILLS},                     0,   0, OATH_OF_IRON, TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Whirlwind Attack",            'e', 3, {S_SWORD, S_POLEARM, S_HAFTED},  30,   0,            0, TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Circle Kick",                 'f', 1, {S_KARATE},                      30,  20,            0, TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Impact Blow",                 'g', 1, {S_HAFTED},                      30,  10,            0, TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Earthquakes",                 'h', 1, {S_HAFTED},                      60, 140, OATH_OF_IRON, TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Lunge",                       'l', 1, {NUM_SKILLS},                     0,   3, OATH_OF_IRON, TALENT_WARRIOR, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
 
 	/* Specialized realm talents */
-	{"Detect magic",                'e', 1, {S_WIZARDRY},                    40,  40, 0,            TALENT_UTILITY},
-	{"Phase warp",                  'f', 1, {S_WIZARDRY},                    70,  10, 0,            TALENT_UTILITY},
-	{"Tap magical energy",          'g', 1, {S_WIZARDRY},                    75,  10, 0,            TALENT_UTILITY},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
+	{"Detect magic",                'e', 1, {S_WIZARDRY},                    40,  40, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Phase warp",                  'f', 1, {S_WIZARDRY},                    70,  10, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Tap magical energy",          'g', 1, {S_WIZARDRY},                    75,  10, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
 
-	{"Sense evil",                  'h', 1, {S_PIETY},                       30,  50, 0,            TALENT_UTILITY},
-	{"Restore stats",               'i', 1, {S_PIETY},                       75, 400, 0,            TALENT_UTILITY},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
+	{"Sense evil",                  'h', 1, {S_PIETY},                       30,  50, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Restore stats",               'i', 1, {S_PIETY},                       75, 400, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
 
-	{"Sense animals",               'j', 1, {S_NATURE},                      25,  40, 0,            TALENT_UTILITY},
-	{"Mend self",                   'k', 1, {S_NATURE},                      50,   0, 0,            TALENT_UTILITY},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
+	{"Sense animals",               'j', 1, {S_NATURE},                      25,  40, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Mend self",                   'k', 1, {S_NATURE},                      50,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
 
-	{"Sense undead",                'l', 1, {S_DOMINION},                    25,  40, 0,            TALENT_UTILITY},
-	{"Restore experience",          'm', 1, {S_DOMINION},                    85, 400, 0,            TALENT_UTILITY},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
+	{"Sense undead",                'l', 1, {S_DOMINION},                    25,  40, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Restore experience",          'm', 1, {S_DOMINION},                    85, 400, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
 
 	/* Magical device */
-	{"Sense charges",               'n', 1, {S_DEVICE},                      70,   0, 0,            TALENT_UTILITY},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
+	{"Sense charges",               'n', 1, {S_DEVICE},                      70,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
 
 	/* Burglary */
-	{"Darkness",                    '-', 1, {S_BURGLARY},                    20,  10, 0,            TALENT_UTILITY | TALENT_WARRIOR},
-	{"Detect & nab objects",        'o', 1, {S_BURGLARY},                    40,   0, 0,            TALENT_UTILITY | TALENT_WARRIOR},
-	{"Poison ammo",                 'p', 1, {S_BURGLARY},                    55,   0, 0,            TALENT_UTILITY},
-	{"Hit and run",                 'q', 1, {S_BURGLARY},                    70,  10, 0,            TALENT_UTILITY | TALENT_WARRIOR},
+	{"Darkness",                    '-', 1, {S_BURGLARY},                    20,  10, 0,            TALENT_UTILITY | TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Detect & nab objects",        'o', 1, {S_BURGLARY},                    40,   0, 0,            TALENT_UTILITY | TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Poison ammo",                 'p', 1, {S_BURGLARY},                    55,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Hit and run",                 'q', 1, {S_BURGLARY},                    70,  10, 0,            TALENT_UTILITY | TALENT_WARRIOR, SHAPE_NORMAL},
 
 	/* Utility skills */
-	{"Predict weather",             'r', 1, {S_PERCEPTION},                   0, WEATHER_LENGTH, 0,            TALENT_UTILITY},
-	{"Sneaking",                    's', 1, {S_STEALTH},                     10,   0, 0,            TALENT_UTILITY | TALENT_WARRIOR},
-	{"Sense area",                  't', 1, {S_PERCEPTION},                  55,  70, 0,            TALENT_UTILITY | TALENT_WARRIOR},
-	{"Superstealth",                'u', 1, {S_STEALTH},                     75, 200, 0,            TALENT_UTILITY | TALENT_WARRIOR},
+	{"Predict weather",             'r', 1, {S_PERCEPTION},                   0, WEATHER_LENGTH, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Sneaking",                    's', 1, {S_STEALTH},                     10,   0, 0,            TALENT_UTILITY | TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Sense area",                  't', 1, {S_PERCEPTION},                  55,  70, 0,            TALENT_UTILITY | TALENT_WARRIOR, SHAPE_NORMAL},
+	{"Superstealth",                'u', 1, {S_STEALTH},                     75, 200, 0,            TALENT_UTILITY | TALENT_WARRIOR, SHAPE_NORMAL},
 
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
 
 	/* Object-manipulation talents */
-	{"Recharging",                  'v', 1, {S_INFUSION},                    30,   0, 0,            TALENT_UTILITY},
-	{"Weapon forging",              'w', 1, {S_FORGE_WEAPON},                15,   0, 0,            TALENT_UTILITY},
-	{"Armor forging",               'x', 1, {S_FORGE_ARMOR},                 15,   0, 0,            TALENT_UTILITY},
-	{"Bowmaking/Fletchery",         'y', 1, {S_FORGE_WEAPON},                15,   0, 0,            TALENT_UTILITY},
-	{"Alchemy",                     'z', 1, {S_ALCHEMY},                     LEV_REQ_ALCHEMY,   0, 0,            TALENT_UTILITY},
-	{"Save/stop saving",            '$', 1, {S_ALCHEMY},                     LEV_REQ_ALCHEMY,   0, 0,            TALENT_UTILITY},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
+	{"Recharging",                  'v', 1, {S_INFUSION},                    30,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Weapon forging",              'w', 1, {S_FORGE_WEAPON},                15,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Armor forging",               'x', 1, {S_FORGE_ARMOR},                 15,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Bowmaking/Fletchery",         'y', 1, {S_FORGE_WEAPON},                15,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Alchemy",                     'z', 1, {S_ALCHEMY},                     LEV_REQ_ALCHEMY,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{"Save/stop saving",            '$', 1, {S_ALCHEMY},                     LEV_REQ_ALCHEMY,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
 
 	/* Miscellaneous abilities */
-	{"Dragon-breathing",            'a', 1, {NUM_SKILLS},                     0,   2, 0,            TALENT_UTILITY | TALENT_SHAPE},
+	{"Dragon-breathing",            'a', 1, {NUM_SKILLS},                     0,   2, 0,            TALENT_UTILITY | TALENT_SHAPE, SHAPE_NORMAL},
 
 	/* General shapechanges */
-	{"Unchange",                    'y', 1, {S_SHAPECHANGE},                  1,   0, 0,             TALENT_SHAPE},
+	{"Unchange",                    'y', 1, {S_SHAPECHANGE},                  1,   0, 0,             TALENT_SHAPE, SHAPE_NORMAL},
 	{"Bear",                        'b', 1, {NUM_SKILLS},                     0,  200, 0,            TALENT_UTILITY | TALENT_SHAPE, SHAPE_BEAR},  /* Can be accessed by shapechage skill or beornings */
 	{"Dragon",                      'd', 1, {S_SHAPECHANGE},                 85,  200, 0,            TALENT_SHAPE, SHAPE_DRAGON},
 	{"Troll",                       't', 1, {S_SHAPECHANGE},                 30,  200, 0,            TALENT_SHAPE, SHAPE_TROLL},
 	{"Eagle",                       'e', 1, {S_SHAPECHANGE},                 50,  200, 0,            TALENT_SHAPE, SHAPE_EAGLE},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,             TALENT_UTILITY},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,             TALENT_UTILITY, SHAPE_NORMAL},
 
 	/* Holy alliance shapechanges */
 	{"Angel",                       'a', 1, {S_SHAPECHANGE},                 60,  200, 0,           TALENT_SHAPE, SHAPE_ANGEL},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
 
 	/* Wizardy shapechangs */
 	{"Vortex",                      'v', 1, {S_SHAPECHANGE},                 45, 200, 0,            TALENT_SHAPE, SHAPE_VORTEX},
 	{"Golem",                       'g', 1, {S_SHAPECHANGE},                 65, 200, 0,            TALENT_SHAPE, SHAPE_GOLEM},
-	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY},
+	{NULL,                          '?', 1, {NUM_SKILLS},                     0,   0, 0,            TALENT_UTILITY, SHAPE_NORMAL},
 
 	/* Nature lore shapechanges */
 	{"Hound",                       'h', 1, {S_SHAPECHANGE},                 45,  200, 0,            TALENT_SHAPE, SHAPE_HOUND},
