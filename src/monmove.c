@@ -452,7 +452,8 @@ static int find_resist(int m_idx, int spell_lrn)
 			if (smart & (SM_RES_CONFU)) a += 10;
 			if (smart & (SM_PERF_SAVE)) a += 10;
 			else if (smart & (SM_GOOD_SAVE)) a += 5;
-			else return (a);
+			//else return (a);
+			return (a);
 		}
 		/* Irresistible, but sound prevents stun */
 		case LRN_SOUND2:
@@ -1427,7 +1428,7 @@ static int cave_passable_mon(monster_type *m_ptr, int y, int x, bool *bash)
 	/* Non-floor passable features and doors */
 	else if (f_ptr->flags & (TF_PASSABLE | TF_DOOR_ANY))
 	{
-		int feat = cave_feat[y][x];
+		int feature = cave_feat[y][x];
 
 		/* Closed doors */
 		if (f_ptr->flags & (TF_DOOR_CLOSED))
@@ -1439,7 +1440,7 @@ static int cave_passable_mon(monster_type *m_ptr, int y, int x, bool *bash)
 			if (r_ptr->flags2 & (RF2_OPEN_DOOR))
 			{
 				/* Closed doors and secret doors */
-				if ((feat == FEAT_DOOR_HEAD) || (feat == FEAT_SECRET))
+				if ((feature == FEAT_DOOR_HEAD) || (feature == FEAT_SECRET))
 				{
 					/*
 					 * Note:  This section will have to be rewritten if
@@ -1455,12 +1456,12 @@ static int cave_passable_mon(monster_type *m_ptr, int y, int x, bool *bash)
 				 * Locked doors (not jammed).  Monsters know how hard
 				 * doors in their neighborhood are to unlock.
 				 */
-				else if (feat < FEAT_DOOR_HEAD + 0x08)
+				else if (feature < FEAT_DOOR_HEAD + 0x08)
 				{
 					int lock_power, ability;
 
 					/* Door power (from 50 to 350) */
-					lock_power = 50 * (feat - FEAT_DOOR_HEAD);
+					lock_power = 50 * (feature - FEAT_DOOR_HEAD);
 
 					/* Calculate unlocking ability (usu. 10 to 90) */
 					ability = (r_ptr->level / 2) + 10;
@@ -1484,8 +1485,8 @@ static int cave_passable_mon(monster_type *m_ptr, int y, int x, bool *bash)
 				 * character door bashing code is changed, however,
 				 * we'll stick with this.
 				 */
-				if (feat >= FEAT_DOOR_HEAD)
-					door_power = 80 + 80 * ((feat - FEAT_DOOR_HEAD) % 8);
+				if (feature >= FEAT_DOOR_HEAD)
+					door_power = 80 + 80 * ((feature - FEAT_DOOR_HEAD) % 8);
 				else
 					door_power = 80;
 
@@ -1517,7 +1518,7 @@ static int cave_passable_mon(monster_type *m_ptr, int y, int x, bool *bash)
 		}
 
 		/* Rubble */
-		if (feat == FEAT_RUBBLE)
+		if (feature == FEAT_RUBBLE)
 		{
 			/* Some monsters move easily through rubble */
 			if ((r_ptr->flags2 & (RF2_PASS_WALL)) ||
@@ -1531,7 +1532,7 @@ static int cave_passable_mon(monster_type *m_ptr, int y, int x, bool *bash)
 		}
 
 		/* Trees */
-		if (feat == FEAT_TREE)
+		if (feature == FEAT_TREE)
 		{
 			/* Some monsters can pass right through trees */
 			if (r_ptr->flags2 & (RF2_PASS_WALL)) return (move_chance);
@@ -1548,7 +1549,7 @@ static int cave_passable_mon(monster_type *m_ptr, int y, int x, bool *bash)
 			}
 		}
 
-		if (feat == FEAT_WATER)
+		if (feature == FEAT_WATER)
 		{
 			/* Flying monsters can always cross water */
 			if (r_ptr->flags2 & (RF2_FLYING)) return (move_chance);
@@ -1578,7 +1579,7 @@ static int cave_passable_mon(monster_type *m_ptr, int y, int x, bool *bash)
 		}
 
 		/* Lava */
-		if (feat == FEAT_LAVA)
+		if (feature == FEAT_LAVA)
 		{
 			/* Only fiery or strong flying creatures will cross lava */
 			if (r_ptr->flags3 & (RF3_IM_FIRE)) return (move_chance);
