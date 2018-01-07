@@ -800,7 +800,7 @@ void get_obj_num_prep(void)
 /*
  * Returns the index for the realm that is correct for the player.
  */
-int get_equivalent_book(int index, byte realm)
+int get_equivalent_book(int index/*, byte realm*/)
 {
     int i;
     int tval = PLAYER_BOOK_TVAL;
@@ -976,7 +976,7 @@ s16b get_obj_num(int level)
         else                                     fix_freq = 3;  /* One in 3 gives a 50% overall chance of getting a book of the correct realm */
 
         /* Change the index */
-        if (one_in_(fix_freq)) i = get_equivalent_book(i, p_ptr->realm);
+        if (one_in_(fix_freq)) i = get_equivalent_book(i/*, p_ptr->realm*/);
 	}
 
 
@@ -1383,6 +1383,7 @@ s32b object_value_real(const object_type *o_ptr)
 			value += pval_value_obj(o_ptr, TR_PVAL_MIGHT);
 
 			/* Fall through */
+			__attribute__((fallthrough));
 		}
 
 		case TV_DIGGING:
@@ -1724,6 +1725,7 @@ bool object_similar(const object_type *o_ptr, const object_type *j_ptr)
 				return (FALSE);
 
 			/* Fall through */
+			__attribute__((fallthrough));
 		}
 
 		/* Weapons and Armor */
@@ -1849,6 +1851,7 @@ bool object_similar(const object_type *o_ptr, const object_type *j_ptr)
 			{
 				return (FALSE);
 			}
+			__attribute__((fallthrough));
 		}
 
 		/* Various */
