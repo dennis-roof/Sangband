@@ -808,7 +808,8 @@ static errr switch_display_gcu(int display)
  */
 static errr term_data_init_gcu(term_data *td, int rows, int cols, int y, int x, int i)
 {
-
+	char buf[34];
+	
 	term *t = &td->t;
 
 	/* Check window size */
@@ -821,7 +822,8 @@ static errr term_data_init_gcu(term_data *td, int rows, int cols, int y, int x, 
 	if (!td->win)
 	{
 		/* Error */
-		quit("Failed to setup curses window.");
+		sprintf(buf, "Failed to setup curses window %d.", i);
+		quit(buf);
 	}
 
 	/* Initialize the term */
