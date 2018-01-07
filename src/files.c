@@ -3468,7 +3468,7 @@ static bool file_character_options(FILE *fff)
 	if (p_ptr->birth_roll_requirement >= 2500L)
 	{
 		fprintf(fff,
-			"You were rolled up %ld times before being accepted.\n",
+			"You were rolled up %d times before being accepted.\n",
 			p_ptr->birth_roll_requirement);
 
 		flag = TRUE;
@@ -3484,7 +3484,7 @@ static bool file_character_options(FILE *fff)
 		}
 		else
 		{
-			fprintf(fff, "You were rolled up only %ld times.\n",
+			fprintf(fff, "You were rolled up only %d times.\n",
 				p_ptr->birth_roll_requirement);
 		}
 		flag = TRUE;
@@ -3733,7 +3733,7 @@ errr file_character(cptr name, bool full)
 	/* Display various things */
 	fprintf(fff, "   Speed       : %s\n", buf);
 	fprintf(fff, "   Armor      : %d\n", p_ptr->dis_ac + p_ptr->dis_to_a);
-	fprintf(fff, "   Kills       : %ld\n", p_ptr->total_kills);
+	fprintf(fff, "   Kills       : %d\n", p_ptr->total_kills);
 
 	/* Display time elapsed */
 	if (TRUE)
@@ -3746,7 +3746,7 @@ errr file_character(cptr name, bool full)
 		s32b min =  (1440L * tick / len) % 60;
 
 		fprintf(fff,
-			"   Time Elapsed: %ld days, %ld hours, %ld minutes   (%ld turns)\n\n",
+			"   Time Elapsed: %d days, %d hours, %d minutes   (%d turns)\n\n",
 				day, hour, min, turn);
 	}
 
