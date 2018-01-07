@@ -1570,7 +1570,7 @@ void health_redraw_aux(monster_type *m_ptr, int row, int col)
 	}
 
 	/* Tracking a dead monster (?) */
-	else if (!m_ptr->hp < 0)
+	else if (m_ptr->hp < 0)
 	{
 		/* Indicate that the monster health is "unknown" */
 		(void)Term_putstr(col, row, 12, TERM_WHITE, "[----------]");
