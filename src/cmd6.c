@@ -5593,7 +5593,7 @@ cptr do_activation_aux(int mode, object_type *o_ptr)
 		{
 			/* Calculate damage */
 			s32b damage = o_ptr->dd * (o_ptr->ds + 1) / 2;
-			apply_deadliness(&damage, p_ptr->to_d + o_ptr->to_d);
+			apply_deadliness((long int *) &damage, p_ptr->to_d + o_ptr->to_d);
 			damage *= get_skill(S_THROWING, 20, 50);
 			damage /= 1000;
 
