@@ -132,7 +132,7 @@ void x_fprintf(FILE *fff, int encoding, cptr fmt, ...)
 	/* Translate */
 	xstr_trans(buf, encoding);
 
-	fprintf(fff, buf);
+	fprintf(fff, "%s", buf);
 }
 
 
