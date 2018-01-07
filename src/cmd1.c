@@ -303,18 +303,18 @@ void do_cmd_search(void)
  * Alternatively, also return TRUE if any similar item in the
  * backpack is marked "=g".
  */
-static bool auto_pickup_okay(object_type *o_ptr, bool check_pack, bool pickup, bool quiver)
+static bool auto_pickup_okay(object_type *o_ptr, bool check_pack, bool pickup, bool quiver_carry)
 {
 	cptr s;
 
 	/* It can't be carried */
-	if (!inven_carry_okay(o_ptr) && (!quiver_carry_okay(o_ptr) || !quiver)) return (FALSE);
+	if (!inven_carry_okay(o_ptr) && (!quiver_carry_okay(o_ptr) || !quiver_carry)) return (FALSE);
 
 	/* Option to vacuum up things on the floor (not recommended) */
 	if ((always_pickup) && (!query_floor) && (pickup)) return (TRUE);
 
 	/* Return quivered items to the quiver */
-	if (quiver && o_ptr->quivered && quiver_carry_okay(o_ptr)) return (TRUE);
+	if (quiver_carry && o_ptr->quivered && quiver_carry_okay(o_ptr)) return (TRUE);
 
 	/* Check inscription */
 	if (o_ptr->note)
