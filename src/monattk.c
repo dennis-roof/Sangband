@@ -2065,6 +2065,7 @@ void mad_mon_melee(int m_idx, monster_type *m_ptr, int ty, int tx)
 				/* Try to confuse it  XXX */
 				typ = GF_DO_CONF;
 				dam = 10 + 3 * r_ptr->level / 5;
+				break;
 			}
 
 			/* Hit to confuse */
