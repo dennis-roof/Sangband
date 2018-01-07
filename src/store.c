@@ -1008,6 +1008,8 @@ static bool store_will_buy(const object_type *o_ptr)
 					/* Known blessed blades are accepted too */
 					if ((f3 & (TR3_BLESSED)) && object_known_p(o_ptr))
 						break;
+					
+					__attribute__((fallthrough));
 				}
 
 				default:
