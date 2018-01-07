@@ -1228,7 +1228,7 @@ extern bool set_aura_cold(int v);
 extern bool set_mental_barrier(int v);
 extern bool set_forbid_summoning(int v);
 extern bool set_wraithform(int v);
-extern bool shapechange_perm(s16b shape);
+extern void shapechange_perm(s16b shape);
 extern bool shapechange_temp(int v, s16b shape);
 extern bool set_pois_power(int v, int dur);
 extern bool set_chaos_power(int v, int dur);
