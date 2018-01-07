@@ -759,9 +759,9 @@ void do_cmd_wield(void)
 	/* Object has no location */
 	i_ptr->iy = i_ptr->ix = 0;
 
-    /* Hack -- delay removing the second weapon */
-    if (remove_two_weapons)
-        (void)inven_takeoff(INVEN_ARM, 255);
+	/* Hack -- delay removing the second weapon */
+	if (remove_two_weapons)
+		(void)inven_takeoff(INVEN_ARM, 255);
 
 
 	/* Increment the equip counter by hand */
