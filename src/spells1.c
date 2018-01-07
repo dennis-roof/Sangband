@@ -1261,6 +1261,8 @@ static bool project_o(int who, int y, int x, int dam, int typ)
 
 				/* Force also moves objects */
 				if ((typ != GF_FORCE) || (do_kill)) break;
+				
+				__attribute__((fallthrough));
 			}
 
 			/* Wind blows things around */
