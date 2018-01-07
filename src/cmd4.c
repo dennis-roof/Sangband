@@ -3496,7 +3496,7 @@ void do_cmd_visuals(char cmd)
 			int max_pair = 2;
 			int old_pair;
 
-			int move;
+			//int move;
 
 			int pair = 0;
 			char ch;
@@ -3793,7 +3793,7 @@ void do_cmd_visuals(char cmd)
 
 			int max_editable;
 
-			int move;
+			//int move;
 
 			int pair = 0;
 			char ch;
@@ -6951,7 +6951,7 @@ static void do_cmd_knowledge_kill_count(void)
 	u32b k;
 
 	int why;
-	int wid;
+	//int wid;
 
 	int grp, i, n, count;
 
@@ -7015,7 +7015,7 @@ static void do_cmd_knowledge_kill_count(void)
 	text_out_file = fp;
 
 	/* Get available width */
-	wid = text_out_wrap - text_out_indent;
+	//wid = text_out_wrap - text_out_indent;
 
 
 	/* Select the sort method */
