@@ -2902,9 +2902,10 @@ static void haggle_till_done(int a_idx)
 		if (((is_melee_weapon(a_ptr)) && (one_in_(3))) ||
 			 (a_ptr->tval == TV_BOOTS))
 		{
-			if (potential >= (a_ptr->tval == TV_BOOTS) ? 4000 : 8000) pval = 10;
+			pval = 10;
+			/*if (potential >= (a_ptr->tval == TV_BOOTS) ? 4000 : 8000) pval = 10;
 			else if (potential >= (a_ptr->tval == TV_BOOTS) ? 3500 : 7000) pval = 8;
-			else pval = 5;
+			else pval = 5;*/
 
 			get_quality(TRUE, PVAL_SPEED, pval, a_idx);
 			if (potential < 750) potential = 750;
