@@ -3499,7 +3499,7 @@ void do_cmd_visuals(char cmd)
 			//int move;
 
 			int pair = 0;
-			char ch;
+			char keypress;
 			byte fa = 0, fc = 0;
 
 			bool dummy;
@@ -3578,21 +3578,21 @@ void do_cmd_visuals(char cmd)
 				while (TRUE)
 				{
 					/* Get key */
-					ch = inkey(FALSE);
+					keypress = inkey(FALSE);
 
 					/* Allow orthogonal direction keys */
-					get_ui_direction(&ch, UI_NODIAG | UI_NOMOUSE, &dummy);
+					get_ui_direction(&keypress, UI_NODIAG | UI_NOMOUSE, &dummy);
 
 					/* Accept anything except untranslated mouse actions */
-					if (ch != MOUSEKEY) break;
+					if (keypress != MOUSEKEY) break;
 				}
 
 				/* Accept changes */
-				if ((ch == ESCAPE) || (ch == '\n') || (ch == '\r')) break;
+				if ((keypress == ESCAPE) || (keypress == '\n') || (keypress == '\r')) break;
 
 
 				/* Move to another item */
-				if (ch == 'n')
+				if (keypress == 'n')
 				{
 					if (index >= z_info->f_max - 1) index = 0;
 					else index++;
@@ -3602,7 +3602,7 @@ void do_cmd_visuals(char cmd)
 						if (++index > z_info->f_max - 1) index = 0;
 					}
 				}
-				else if (ch == 'N')
+				else if (keypress == 'N')
 				{
 					if (index <= 0) index = z_info->f_max - 1;
 					else index--;
@@ -3612,7 +3612,7 @@ void do_cmd_visuals(char cmd)
 						if (--index < 0) index = z_info->f_max - 1;
 					}
 				}
-				else if (ch == KTRL('N'))
+				else if (keypress == KTRL('N'))
 				{
 					/* Move cursor, suggest the current value */
 					move_cursor(16, 0);
@@ -3626,29 +3626,29 @@ void do_cmd_visuals(char cmd)
 				}
 
 				/* Change pair */
-				else if (ch == '4')
+				else if (keypress == '4')
 				{
 					pair--;
 					if (pair < 0) pair = max_pair;
 				}
-				else if (ch == '6')
+				else if (keypress == '6')
 				{
 					pair++;
 					if (pair > max_pair) pair = 0;
 				}
 
 				/* Change attribute */
-				else if (ch == 'a')
+				else if (keypress == 'a')
 				{
 					if (fa == max_attr) fa = 0;
 					else fa++;
 				}
-				else if (ch == 'A')
+				else if (keypress == 'A')
 				{
 					if (fa == 0) fa = max_attr;
 					else fa--;
 				}
-				else if (ch == KTRL('A'))
+				else if (keypress == KTRL('A'))
 				{
 					/* Move cursor, suggest the current value */
 					move_cursor(16, 0);
@@ -3660,17 +3660,17 @@ void do_cmd_visuals(char cmd)
 				}
 
 				/* Change character */
-				else if (ch == 'c')
+				else if (keypress == 'c')
 				{
 					if (fc == 255) fc = 0;
 					else fc++;
 				}
-				else if (ch == 'C')
+				else if (keypress == 'C')
 				{
 					if (fc == 0) fc = 255;
 					else fc--;
 				}
-				else if (ch == KTRL('C'))
+				else if (keypress == KTRL('C'))
 				{
 					/* Move cursor, suggest the current value */
 					move_cursor(16, 0);
@@ -3682,7 +3682,7 @@ void do_cmd_visuals(char cmd)
 				}
 
 				/* Change special lighting settings */
-				else if (ch == '!')
+				else if (keypress == '!')
 				{
 					/* Toggle the "torch only" setting */
 					if (f_ptr->flags & (TF_TORCH_ONLY))
@@ -3691,7 +3691,7 @@ void do_cmd_visuals(char cmd)
 						f_ptr->flags |= (TF_TORCH_ONLY);
 				}
 
-				else if (ch == '?')
+				else if (keypress == '?')
 				{
 					/* Display help on features */
 					do_cmd_visual_info("help-features");
@@ -3796,7 +3796,7 @@ void do_cmd_visuals(char cmd)
 			//int move;
 
 			int pair = 0;
-			char ch;
+			char keypress;
 			byte ga = 0, gc;
 
 			bool dummy;
@@ -3919,21 +3919,21 @@ void do_cmd_visuals(char cmd)
 				while (TRUE)
 				{
 					/* Get key */
-					ch = inkey(FALSE);
+					keypress = inkey(FALSE);
 
 					/* Allow orthogonal direction keys */
-					get_ui_direction(&ch, UI_NODIAG | UI_NOMOUSE, &dummy);
+					get_ui_direction(&keypress, UI_NODIAG | UI_NOMOUSE, &dummy);
 
 					/* Accept anything except untranslated mouse actions */
-					if (ch != MOUSEKEY) break;
+					if (keypress != MOUSEKEY) break;
 				}
 
 
 				/* Accept changes */
-				if ((ch == ESCAPE) || (ch == '\n') || (ch == '\r')) break;
+				if ((keypress == ESCAPE) || (keypress == '\n') || (keypress == '\r')) break;
 
 				/* Move to another item */
-				if (ch == 'n')
+				if (keypress == 'n')
 				{
 					if (index >= max_editable) index = 1;
 					else index++;
@@ -3943,7 +3943,7 @@ void do_cmd_visuals(char cmd)
 						if (++index > max_editable) index = 1;
 					}
 				}
-				else if (ch == 'N')
+				else if (keypress == 'N')
 				{
 					if (index <= 1) index = max_editable;
 					else index--;
@@ -3953,7 +3953,7 @@ void do_cmd_visuals(char cmd)
 						if (--index < 1) index = max_editable;
 					}
 				}
-				else if (ch == KTRL('N'))
+				else if (keypress == KTRL('N'))
 				{
 					/* Move cursor, suggest the current value */
 					move_cursor(16, 0);
@@ -3967,29 +3967,29 @@ void do_cmd_visuals(char cmd)
 				}
 
 				/* Change pair */
-				else if (ch == '4')
+				else if (keypress == '4')
 				{
 					pair--;
 					if (pair < 0) pair = max_pair;
 				}
-				else if (ch == '6')
+				else if (keypress == '6')
 				{
 					pair++;
 					if (pair > max_pair) pair = 0;
 				}
 
 				/* Change attribute */
-				else if (ch == 'a')
+				else if (keypress == 'a')
 				{
 					if (ga == max_attr) ga = 0;
 					else ga++;
 				}
-				else if (ch == 'A')
+				else if (keypress == 'A')
 				{
 					if (ga == 0) ga = max_attr;
 					else ga--;
 				}
-				else if (ch == KTRL('A'))
+				else if (keypress == KTRL('A'))
 				{
 					/* Move cursor, suggest the current value */
 					move_cursor(16, 0);
@@ -4001,17 +4001,17 @@ void do_cmd_visuals(char cmd)
 				}
 
 				/* Change character */
-				else if (ch == 'c')
+				else if (keypress == 'c')
 				{
 					if (gc == 255) gc = 0;
 					else gc++;
 				}
-				else if (ch == 'C')
+				else if (keypress == 'C')
 				{
 					if (gc == 0) gc = 255;
 					else gc--;
 				}
-				else if (ch == KTRL('C'))
+				else if (keypress == KTRL('C'))
 				{
 					/* Move cursor, suggest the current value */
 					move_cursor(16, 0);
@@ -6666,6 +6666,7 @@ static void do_cmd_knowledge_artifacts(void)
 				}
 
 				/* Fall through */
+				__attribute__((fallthrough));
 			}
 
 			case 'R':
@@ -6896,6 +6897,7 @@ static void do_cmd_knowledge_monsters(void)
 				}
 
 				/* Fall through */
+				__attribute__((fallthrough));
 			}
 
 			case 'R':
@@ -7443,6 +7445,7 @@ static void do_cmd_knowledge_objects(void)
 				}
 
 				/* Fall through */
+				__attribute__((fallthrough));
 			}
 
 			case 'R':
