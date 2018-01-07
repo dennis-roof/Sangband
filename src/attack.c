@@ -595,7 +595,7 @@ static int critical_shot(int chance, bool thrown_weapon, bool visible,
 	u32b f1, f2, f3;
 	int max;
 
-	bool vorpal = FALSE;
+	//bool vorpal = FALSE;
 
 	int add_power = 0;
 
@@ -620,7 +620,7 @@ static int critical_shot(int chance, bool thrown_weapon, bool visible,
 	if (f1 & (TR1_VORPAL))
 	{
 		power += chance / 2;
-		vorpal = TRUE;
+		//vorpal = TRUE;
 	}
 
 	/* Guild-Burglars get more critical hits when in the dark */
@@ -2714,7 +2714,7 @@ void do_cmd_fire(void)
 	u32b f1, f2, f3;
 
 	int hit_body = 0;
-	bool hit_wall = FALSE;
+	//bool hit_wall = FALSE;
 	bool impact = FALSE;
 
 	byte missile_attr;
@@ -3008,7 +3008,7 @@ void do_cmd_fire(void)
 		/* Collide with anything non-projectable */
 		if (!cave_project_bold(ny, nx))
 		{
-			hit_wall = TRUE;
+			//hit_wall = TRUE;
 			break;
 		}
 
