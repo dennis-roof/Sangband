@@ -152,7 +152,7 @@ bool history_lose_artifact(byte a_idx)
  *
  * Returne TRUE on success.
  */
-bool history_add_full(u16b type, byte a_idx, s16b dlev, s16b clev, s32b turn, const char *text)
+bool history_add_full(u16b type, byte a_idx, s16b dlev, s16b clev, s32b turn_number, const char *text)
 {
 	/* Allocate the history list if needed */
 	if (!history_list)
@@ -167,7 +167,7 @@ bool history_add_full(u16b type, byte a_idx, s16b dlev, s16b clev, s32b turn, co
 	history_list[history_ctr].dlev = dlev;
 	history_list[history_ctr].clev = clev;
 	history_list[history_ctr].a_idx = a_idx;
-	history_list[history_ctr].turn = turn;
+	history_list[history_ctr].turn = turn_number;
 	my_strcpy(history_list[history_ctr].event,
 	          text, sizeof(history_list[history_ctr].event));
 
@@ -329,7 +329,7 @@ static void print_history(int first_item, int page_size, FILE *fff)
     char buf[90];
 
     row = 0;
-    for (i = first_item; row <= page_size && i < history_ctr; i++)
+    for (i = first_item; row <= page_size && (unsigned) i < history_ctr; i++)
     {
         /* Skip messages about artifacts not yet IDed. */
         if (history_masked(i))
