@@ -3729,6 +3729,7 @@ bool askfor_aux(char *buf, int len, bool numpad_cursor)
 				if (d > 0L) d--;
 
 				/* Fall through to 'Delete key' */
+				__attribute__((fallthrough));
 			}
 
 			/* Delete */
