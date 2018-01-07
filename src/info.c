@@ -3472,5 +3472,5 @@ void dump_obj_attrib(FILE *fff, object_type *o_ptr, int know_all)
 	}
 
 	/* Dump to file */
-	fprintf(fff, desc);
+	fprintf(fff, "%s", desc);
 }
