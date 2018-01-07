@@ -4572,6 +4572,7 @@ bool get_item(int *cp, cptr pmt, cptr str, int mode)
 				}
 
 				/* Otherwise, treat this command as a '*' or ' ' */
+				__attribute__((fallthrough));
 			}
 			case '*':
 			case ' ':
